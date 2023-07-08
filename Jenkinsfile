@@ -11,7 +11,7 @@ pipeline {
 
         stage('Stage') {
           steps {
-            sh 'date'
+            sh 'echo `hostname`-`date` > /tmp/test.csv'
           }
         }
 

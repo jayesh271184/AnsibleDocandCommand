@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/jayesh271184/dhtechlab.git'
+                sh 'git clone https://github.com/jayesh271184/dhtechlab.git'
             }
 
           }

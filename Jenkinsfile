@@ -1,17 +1,18 @@
 pipeline {
-  agent any
-  stages {
-    stage('gitStage') {
-        steps {
-            git 'https://github.com/jayesh271184/dhtechlab.git'
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                git 'https://github.com/jayesh271184/dhtechlab.git'
+            }
+
           }
-       }
+	    stage('shell') {
+            steps {
+                sh 'echo -e `hostname`-`date`'
+            }
 
-    stage('Stage2') {
-      steps {
-        sh 'echo "Hello jayesh"'
-      }
+          }
     }
-
-  }
 }
